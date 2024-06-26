@@ -14,11 +14,11 @@
 ## How to run?
 
 ```bash
-conda create -n hate python=3.11.5 -y
+conda create -n docchat python=3.11.5 -y
 ```
 
 ```bash
-conda activate hate
+conda activate docchat
 ```
 
 ```bash
