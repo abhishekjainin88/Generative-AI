@@ -4,11 +4,11 @@ from datetime import datetime
 
 # Common constants
 TIMESTAMP: str = datetime.now().strftime("%m_%d_%Y_%H_%M_%S")
-ARTIFACTS_DIR = os.path.join("artifacts", TIMESTAMP)
-BUCKET_NAME = 'hate-speech2024'
-ZIP_FILE_NAME = 'dataset.zip'
-LABEL = 'label'
-TWEET = 'tweet'
+#ARTIFACTS_DIR = os.path.join("artifacts", TIMESTAMP)
+#BUCKET_NAME = 'hate-speech2024'
+#ZIP_FILE_NAME = 'dataset.zip'
+#LABEL = 'label'
+#TWEET = 'tweet'
 
 #Document Loader Constants
 #DOCUMENT_LOADER = "UnstructuredPDFLoader"
@@ -16,7 +16,7 @@ DOCUMENT_LOADER = "PyPDFLoader"
 DOCUMENT_FOLDER = "Data/"
 
 #API Constants
-OPENAI_API_KEY = ""
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 #Embedding Constants
 EMBEDDINGS = "OpenAIEmbeddings"

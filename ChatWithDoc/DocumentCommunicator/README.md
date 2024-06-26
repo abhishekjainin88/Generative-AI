@@ -14,11 +14,11 @@
 ## How to run?
 
 ```bash
-conda create -n docchat python=3.11.5 -y
+conda create -n venv python=3.10 -y
 ```
 
 ```bash
-conda activate docchat
+conda activate venv
 ```
 
 ```bash

@@ -7,7 +7,6 @@ langchain-astradb
 pdf2image
 pdfminer.six
 unstructured[pdf]
-os
 pypdf
 langchain-openai
 datasets
