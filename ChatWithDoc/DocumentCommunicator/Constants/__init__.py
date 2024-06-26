@@ -19,7 +19,7 @@ DOCUMENT_FOLDER = "D:\DataScience\GEN_AI\ResearchPaper"
 OPENAI_API_KEY = ""
 
 #Embedding Constants
-Embedding = "OpenAIEmbeddings"
+EMBEDDINGS = "OpenAIEmbeddings"
 
 #Chunk Constants
 CHUNK_SIZE = 1000
@@ -28,6 +28,10 @@ CHUNK_OVERLAP  = 200
 #LLM Constants
 LLM = "ChatOpenAI"
 
+#Text Splitter
+TEXT_SPLITTER = "RecursiveCharacterTextSplitter"
+
+'''
 # Data ingestion constants
 DATA_INGESTION_ARTIFACTS_DIR = "DataIngestionArtifacts"
 DATA_INGESTION_IMBALANCE_DATA_DIR = "imbalanced_data.csv"
@@ -77,3 +81,4 @@ MODEL_EVALUATION_FILE_NAME = 'loss.csv'
 MODEL_NAME = 'model.h5'
 APP_HOST = "0.0.0.0"
 APP_PORT = 8080
+'''
