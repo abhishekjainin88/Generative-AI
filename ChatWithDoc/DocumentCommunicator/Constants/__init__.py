@@ -13,7 +13,7 @@ TWEET = 'tweet'
 #Document Loader Constants
 #DOCUMENT_LOADER = "UnstructuredPDFLoader"
 DOCUMENT_LOADER = "PyPDFLoader"
-DOCUMENT_FOLDER = "D:\DataScience\GEN_AI\ResearchPaper"
+DOCUMENT_FOLDER = "Data/"
 
 #API Constants
 OPENAI_API_KEY = ""
