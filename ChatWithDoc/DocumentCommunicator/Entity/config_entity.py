@@ -19,8 +19,16 @@ class APILoaderConfig:
 @dataclass
 class EmbeddingConfig:
     def __init__(self):
-        embedding:str = Embedding
+        embedding:str = EMBEDDINGS
 
+@dataclass
+class SplitterConfig:
+    def __init__(self):
+        splitter:str = TEXT_SPLITTER
+        chunk_size:int = CHUNK_SIZE
+        chunk_overlap:int = CHUNK_OVERLAP
+
+'''
 @dataclass
 class DataIngestionConfig:
     def __init__(self):
@@ -88,8 +96,4 @@ class ModelPusherConfig:
         self.TRAINED_MODEL_PATH = os.path.join(os.getcwd(),ARTIFACTS_DIR, MODEL_TRAINER_ARTIFACTS_DIR)
         self.BUCKET_NAME = BUCKET_NAME
         self.MODEL_NAME = MODEL_NAME
-    
-
-
-
-
+    '''
