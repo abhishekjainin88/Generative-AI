@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from DocumentCommunicator.Constants import *
+from Constants import *
 import os
 
 

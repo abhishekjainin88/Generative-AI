@@ -4,6 +4,7 @@ openai
 Cython
 tiktoken
 langchain-astradb
+langchain_community
 pdf2image
 pdfminer.six
 unstructured[pdf]

@@ -1,10 +1,11 @@
 import os
 import sys
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from DocumentCommunicator.Logger import logging
-from DocumentCommunicator.Exception import CustomException
-
-from DocumentCommunicator.Entity.config_entity import SplitterConfig
+from os.path import dirname, join,abspath
+sys.path.append(abspath(join(dirname(__file__), '..')))
+from Logger import logging
+from Exception import CustomException
+from Entity.config_entity import SplitterConfig
 
 
 class Splitter:

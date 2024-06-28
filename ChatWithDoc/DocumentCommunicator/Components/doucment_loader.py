@@ -1,11 +1,14 @@
 import os
 import sys
-from langchain.document_loaders import UnstructuredPDFLoader
-from langchain.document_loaders import PyPDFLoader
-from DocumentCommunicator.Logger import logging
-from DocumentCommunicator.Exception import CustomException
+from langchain_community.document_loaders import UnstructuredPDFLoader
+from langchain_community.document_loaders import PyPDFLoader
+from os.path import dirname, join,abspath
+sys.path.append(abspath(join(dirname(__file__), '..')))
+from Logger import logging
+from Exception import CustomException
+from Entity.config_entity import DocumentLoaderConfig
 
-from DocumentCommunicator.Entity.config_entity import DocumentLoaderConfig
+
 
 class DocumentLoader:
     def __init__(self, document_loader_config : DocumentLoaderConfig):

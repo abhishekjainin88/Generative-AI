@@ -1,10 +1,11 @@
 import os
 import sys
-from DocumentCommunicator.Logger import logging
-from DocumentCommunicator.Exception import CustomException
-
-from DocumentCommunicator.Entity.config_entity import EmbeddingConfig
-from DocumentCommunicator.Entity.config_entity import APILoaderConfig
+from os.path import dirname, join,abspath
+sys.path.append(abspath(join(dirname(__file__), '..')))
+from Logger import logging
+from Exception import CustomException
+from Entity.config_entity import EmbeddingConfig
+from Entity.config_entity import APILoaderConfig
 
 class Embedding:
     def __init__(self, embedding_config: EmbeddingConfig, api_loader_config: APILoaderConfig):
