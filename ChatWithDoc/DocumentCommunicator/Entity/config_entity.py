@@ -1,14 +1,13 @@
 from dataclasses import dataclass
-from Constants import *
+from Constants import DOCUMENT_LOADER, DOCUMENT_FOLDER
 import os
 
 
 @dataclass
 class DocumentLoaderConfig:
     def __init__(self):
-        document_loader:str = DOCUMENT_LOADER
-        document_folder:str = DOCUMENT_FOLDER
-
+        DOC_LOADER:str = DOCUMENT_LOADER
+        DOC_FOLDER:str = DOCUMENT_FOLDER
 
 @dataclass
 class APILoaderConfig:
