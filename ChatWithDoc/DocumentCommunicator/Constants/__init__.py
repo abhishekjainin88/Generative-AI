@@ -32,6 +32,12 @@ LLM = "ChatOpenAI"
 #Text Splitter
 TEXT_SPLITTER = "RecursiveCharacterTextSplitter"
 
+#MongoDB Constants
+CLUSTER = "cluster0"
+REGION = "i28zl9i"
+USER_NAME = os.getenv("USER_NAME")
+PASSWORD = os.getenv("PASSWORD")
+
 '''
 # Data ingestion constants
 DATA_INGESTION_ARTIFACTS_DIR = "DataIngestionArtifacts"

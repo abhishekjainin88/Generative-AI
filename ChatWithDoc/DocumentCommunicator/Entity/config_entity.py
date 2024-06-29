@@ -23,6 +23,14 @@ class SplitterConfig:
     chunk_size:int = CHUNK_SIZE
     chunk_overlap:int = CHUNK_OVERLAP
 
+@dataclass
+class MongoDBConfig:
+    cluster:str = CLUSTER
+    region:str = REGION
+    user_name:str = USER_NAME
+    password:str =  PASSWORD
+
+
 
   
 
