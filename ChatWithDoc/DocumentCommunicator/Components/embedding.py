@@ -6,6 +6,7 @@ from Logger import logging
 from Exception import CustomException
 from Entity.config_entity import EmbeddingConfig
 from Entity.config_entity import APILoaderConfig
+from langchain.embeddings.openai import OpenAIEmbeddings
 
 class Embedding:
     def __init__(self, embedding_config: EmbeddingConfig, api_loader_config: APILoaderConfig):
