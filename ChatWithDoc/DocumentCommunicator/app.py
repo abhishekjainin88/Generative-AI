@@ -3,5 +3,6 @@ from Entity.config_entity import DocumentLoaderConfig
 
 if __name__ == '__main__':
     config=DocumentLoaderConfig()
+    #print(dir(config))
     dl=DocumentLoader(config)
-    print(dl.get_loader_object())
+    dl.get_loader_object()

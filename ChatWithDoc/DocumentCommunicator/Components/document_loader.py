@@ -10,24 +10,24 @@ from Entity.config_entity import DocumentLoaderConfig
 from Entity.enum import Document_reader
 
 
-class DocumentLoader:
+class DocumentLoader(DocumentLoaderConfig):
+    
     def __init__(self, document_loader_config : DocumentLoaderConfig):
         self.document_loader_config = document_loader_config
+        print(dir(self.document_loader_config.__dataclass_fields__))
     
     def get_loader_object(self):
         try:
-            print("inside get_loader_object")
             logging.info("Entered the get_loader_object method of DocumentLoader class")
-            if self.document_loader_config.document_loader == Document_reader.DOCUMENT_UNSTRUCTURE_LOADER:
+            if self.document_loader_config.document_loader == "UnstructuredPDFLoader":
                 print("inside unstructured loader")
-                loaders = [UnstructuredPDFLoader(os.path.join(self.document_loader_config.DOCUMENT_FOLDER, fn)) for fn in os.listdir(self.document_loader_config.DOCUMENT_FOLDER)]
+                loaders = [UnstructuredPDFLoader(os.path.join(self.document_loader_config.document_folder, fn)) for fn in os.listdir(self.document_loader_config.DOCUMENT_FOLDER)]
                 return loaders
-            if self.document_loader_config.document_loader == Document_reader.DOCUMENT_PDF_LOADER:
+            if self.document_loader_config.document_loader == "PyPDFLoader":
                 documents = []
-                print("inside pdf loader")
-                for file in os.listdir(self.document_loader_config.DOCUMENT_FOLDER):
+                for file in os.listdir(self.document_loader_config.document_folder):
                     if file.endswith('.pdf'):
-                        pdf_path = os.path.join(self.document_loader_config.DOCUMENT_FOLDER, file)
+                        pdf_path = os.path.join(self.document_loader_config.document_folder, file)
                         loader = PyPDFLoader(pdf_path)
                         documents.extend(loader.load())                
                 return documents

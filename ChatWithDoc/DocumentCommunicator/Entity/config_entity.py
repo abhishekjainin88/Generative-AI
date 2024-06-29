@@ -1,31 +1,32 @@
 from dataclasses import dataclass
-from Constants import DOCUMENT_LOADER, DOCUMENT_FOLDER
+from Constants import *
 import os
 
 
 @dataclass
 class DocumentLoaderConfig:
-    def __init__(self):
-        DOC_LOADER:str = DOCUMENT_LOADER
-        DOC_FOLDER:str = DOCUMENT_FOLDER
+    document_loader:str = DOCUMENT_LOADER
+    document_folder:str = DOCUMENT_FOLDER
 
 @dataclass
 class APILoaderConfig:
-    def __init__(self):
-        OPENAI_API_KEY:str = OPENAI_API_KEY
+   OPENAI_API_KEY:str = OPENAI_API_KEY
         #OPENAI_API_KEY:str = OPENAI_API_KEY
 
 @dataclass
 class EmbeddingConfig:
-    def __init__(self):
-        embedding:str = EMBEDDINGS
+    embedding:str = EMBEDDINGS
 
 @dataclass
 class SplitterConfig:
-    def __init__(self):
-        splitter:str = TEXT_SPLITTER
-        chunk_size:int = CHUNK_SIZE
-        chunk_overlap:int = CHUNK_OVERLAP
+    splitter:str = TEXT_SPLITTER
+    chunk_size:int = CHUNK_SIZE
+    chunk_overlap:int = CHUNK_OVERLAP
+
+
+  
+
+
 
 '''
 @dataclass
