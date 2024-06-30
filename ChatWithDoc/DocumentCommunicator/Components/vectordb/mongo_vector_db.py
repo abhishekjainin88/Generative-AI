@@ -6,7 +6,8 @@ from pymongo.mongo_client import MongoClient
 from Entity.config_entity import MongoDBConfig
 from Exception import CustomException
 from Logger import logging
-
+from dotenv import load_dotenv
+load_dotenv()
 class MongoDBVectorStore(VectorDB):
     def __init__(self, mongo_db_config : MongoDBConfig):
         self.mongo_db_config = mongo_db_config
