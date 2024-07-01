@@ -6,7 +6,8 @@ load_dotenv()
 
 
 # Common constants
-TIMESTAMP: str = datetime.now().strftime("%m_%d_%Y_%H_%M_%S")
+#TIMESTAMP: str = datetime.now().strftime("%m_%d_%Y_%H_%M_%S")
+TIMESTAMP: str = datetime.now().strftime("%m_%d_%Y_%H_%M")
 #ARTIFACTS_DIR = os.path.join("artifacts", TIMESTAMP)
 #BUCKET_NAME = 'hate-speech2024'
 #ZIP_FILE_NAME = 'dataset.zip'
@@ -33,6 +34,14 @@ LLM = "ChatOpenAI"
 
 #Text Splitter
 TEXT_SPLITTER = "RecursiveCharacterTextSplitter"
+
+#VectorDB
+#VECTOR_DB = "MongoDB"
+VECTOR_DB = "FAISS"
+
+
+#Model Constants
+MODEL_NAME= "gpt-3.5-turbo"
 
 #MongoDB Constants
 CLUSTER = "cluster0"

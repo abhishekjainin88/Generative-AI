@@ -31,6 +31,13 @@ class MongoDBConfig:
     password:str =  PASSWORD
 
 
+@dataclass
+class VectorDBConfig:
+    vectordb:str = VECTOR_DB
+
+@dataclass
+class ModelConfig:
+    model_name:str = MODEL_NAME
 
   
 
