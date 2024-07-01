@@ -14,3 +14,7 @@ datasets
 numpy 
 pandas
 pymongo
+langchain_community
+pypdf
+faiss-cpu
+cryptography>=3.1
