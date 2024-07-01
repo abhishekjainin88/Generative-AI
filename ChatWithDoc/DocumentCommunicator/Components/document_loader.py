@@ -2,13 +2,13 @@ import os
 import sys
 from langchain_community.document_loaders import UnstructuredPDFLoader
 from langchain_community.document_loaders import PyPDFLoader
-from os.path import dirname, join,abspath
-sys.path.append(abspath(join(dirname(__file__), '..')))
-from Logger import logging
+from Logger import CustomLogger
 from Exception import CustomException
 from Entity.config_entity import DocumentLoaderConfig
 from Entity.enum import Document_reader
 
+
+logging = CustomLogger("doc_loader_logger")
 
 class DocumentLoader(DocumentLoaderConfig):
     
@@ -20,7 +20,6 @@ class DocumentLoader(DocumentLoaderConfig):
         try:
             logging.info("Entered the get_loader_object method of DocumentLoader class")
             if self.document_loader_config.document_loader == "UnstructuredPDFLoader":
-                print("inside unstructured loader")
                 loaders = [UnstructuredPDFLoader(os.path.join(self.document_loader_config.document_folder, fn)) for fn in os.listdir(self.document_loader_config.DOCUMENT_FOLDER)]
                 return loaders
             if self.document_loader_config.document_loader == "PyPDFLoader":

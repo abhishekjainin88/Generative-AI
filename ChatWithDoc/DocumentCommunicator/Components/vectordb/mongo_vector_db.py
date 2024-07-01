@@ -1,5 +1,5 @@
 import sys
-from vector_DB import VectorDB
+from Components.vectordb.vector_DB import VectorDB
 from os.path import dirname, join,abspath
 sys.path.append(abspath(join(dirname(__file__), '..')))
 from pymongo.mongo_client import MongoClient
