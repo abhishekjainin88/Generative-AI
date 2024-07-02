@@ -1,6 +1,7 @@
 from langchain_openai import OpenAIEmbeddings
 from Entity.config_entity import APILoaderConfig,EmbeddingConfig
 from Logger import CustomLogger
+from Exception import CustomException
 
 logging = CustomLogger("embedding_loader_logger")
 class EmbeddingLoader(APILoaderConfig):

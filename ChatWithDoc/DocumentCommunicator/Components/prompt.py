@@ -1,14 +1,13 @@
 
 prompt_template ="""
-    You are an expert at system to answering the question. 
-    Answer the following question based only on the provided context. 
+    You are an AI assistant. You will be given a question and a context. 
+    Your task is to answer the question based on the context. 
     Think step by step before providing a detailed answer. 
-    if do not know the answer, you can say "I don't know" or "I don't know the answer".
+    if do not know the answer, you can say "I don't know the answer.Let me know what else I can help you with."
 
-    <context>
-    {context}
-    </context>
+    Question: {question}
 
-    Question: 
-    {input}
+    Context: {context}
+
+    Answer:
     """

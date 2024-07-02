@@ -19,7 +19,7 @@ class EmbeddingConfig:
 
 @dataclass
 class SplitterConfig:
-    splitter:str = TEXT_SPLITTER
+    text_splitter:str = TEXT_SPLITTER
     chunk_size:int = CHUNK_SIZE
     chunk_overlap:int = CHUNK_OVERLAP
 
@@ -36,8 +36,13 @@ class VectorDBConfig:
     vectordb:str = VECTOR_DB
 
 @dataclass
-class ModelConfig:
+class LLMConfig:
+    llm_name:str = LLM_NAME
     model_name:str = MODEL_NAME
+
+@dataclass
+class OutputConfig:
+    parser_name:str = PARSER_NAME
 
   
 

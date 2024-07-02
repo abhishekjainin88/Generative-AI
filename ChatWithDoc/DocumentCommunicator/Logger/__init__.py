@@ -38,4 +38,9 @@ class CustomLogger:
 
     def critical(self, message):
         self.logger.critical(message)
+    
+    def inspect(self,state):
+        """Print the state passed between Runnables in a langchain and pass it on"""
+        self.info(state)
+        return state
 

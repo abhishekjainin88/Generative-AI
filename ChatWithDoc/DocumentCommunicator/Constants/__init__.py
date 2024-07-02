@@ -4,20 +4,16 @@ from datetime import datetime
 
 load_dotenv()
 
-
 # Common constants
 #TIMESTAMP: str = datetime.now().strftime("%m_%d_%Y_%H_%M_%S")
 TIMESTAMP: str = datetime.now().strftime("%m_%d_%Y_%H_%M")
-#ARTIFACTS_DIR = os.path.join("artifacts", TIMESTAMP)
-#BUCKET_NAME = 'hate-speech2024'
-#ZIP_FILE_NAME = 'dataset.zip'
-#LABEL = 'label'
-#TWEET = 'tweet'
+
 
 #Document Loader Constants
 #DOCUMENT_LOADER = "UnstructuredPDFLoader"
 DOCUMENT_LOADER = "PyPDFLoader"
-DOCUMENT_FOLDER = "Data/"
+DOCUMENT_FOLDER = "Data"
+
 
 #API Constants
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
@@ -25,23 +21,23 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 #Embedding Constants
 EMBEDDINGS = "OpenAIEmbeddings"
 
+#Text Splitter
+TEXT_SPLITTER = "RecursiveCharacterTextSplitter"
+
 #Chunk Constants
 CHUNK_SIZE = 1000
 CHUNK_OVERLAP  = 200
-
-#LLM Constants
-LLM = "ChatOpenAI"
-
-#Text Splitter
-TEXT_SPLITTER = "RecursiveCharacterTextSplitter"
 
 #VectorDB
 #VECTOR_DB = "MongoDB"
 VECTOR_DB = "FAISS"
 
-
-#Model Constants
+#LLM Constants
+LLM_NAME = "OpenAI"
 MODEL_NAME= "gpt-3.5-turbo"
+
+#Output parser Config
+PARSER_NAME="StrOutputParser"
 
 #MongoDB Constants
 CLUSTER = "cluster0"
