@@ -29,8 +29,8 @@ CHUNK_SIZE = 1000
 CHUNK_OVERLAP  = 200
 
 #VectorDB
-#VECTOR_DB = "MongoDB"
-VECTOR_DB = "FAISS"
+VECTOR_DB = "MongoDB"
+#VECTOR_DB = "FAISS"
 
 #LLM Constants
 LLM_NAME = "OpenAI"

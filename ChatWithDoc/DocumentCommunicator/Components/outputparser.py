@@ -1,3 +1,4 @@
+import sys
 from langchain.schema.output_parser import StrOutputParser
 from Entity.config_entity import OutputConfig
 from Logger import CustomLogger

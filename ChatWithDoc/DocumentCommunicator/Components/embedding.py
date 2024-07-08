@@ -1,3 +1,4 @@
+import sys
 from langchain_openai import OpenAIEmbeddings
 from Entity.config_entity import APILoaderConfig,EmbeddingConfig
 from Logger import CustomLogger

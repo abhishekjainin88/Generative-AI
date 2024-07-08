@@ -31,7 +31,7 @@ class Service(OutputConfig):
             docs=DocumentLoader.doc_loader()
             split_documents=Splitter.split_document(docs)
             embeddings=EmbeddingLoader.get_embedding_obj()
-            vectorstore=VectorLoader.save_vector(documents=split_documents,embeddings=embeddings)
+            vectorstore=VectorLoader.save_vector(documents=split_documents,embeddings=embeddings)            
             return vectorstore
 
         except Exception as e:

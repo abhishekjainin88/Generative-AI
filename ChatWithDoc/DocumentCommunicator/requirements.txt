@@ -10,6 +10,7 @@ pdfminer.six
 unstructured[pdf]
 pypdf
 langchain-openai
+langchain-mongodb
 datasets
 numpy 
 pandas
@@ -18,3 +19,4 @@ langchain_community
 pypdf
 faiss-cpu
 cryptography>=3.1
+python-dotenv

@@ -13,5 +13,10 @@ class Retriever(VectorLoader):
                 retriever=vectorstore.as_retriever(search_kwargs={"k": 3})                                      
                 logging.info(f"Successfully returned retriever object")                
                 return retriever
+            if VectorLoader.vectordb_config.vectordb == "MongoDB":
+                #retriever=vectorstore.as_retriever(search_type="similarity",search_kwargs={"k": 3})
+                retriever=vectorstore.as_retriever(search_kwargs={"k": 3})
+                logging.info(f"Successfully returned MongoDB retriever object")                
+                return retriever
         except Exception as e:
             raise CustomException(e, sys) from e
