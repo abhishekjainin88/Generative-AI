@@ -26,23 +26,27 @@ class Service(OutputConfig):
         return "\n\n".join(doc.page_content for doc in docs)
     
     @classmethod  
-    def doc_loader_wrapper(cls,load_Document=True):
+    def doc_loader_wrapper(cls):
         try:
             embeddings=EmbeddingLoader.get_embedding_obj()
-            if  not load_Document:
-                vectorstore=VectorLoader.load_vector(embeddings)
-            else:
-                docs=DocumentLoader.doc_loader()
-                split_documents=Splitter.split_document(docs)
-                vectorstore=VectorLoader.save_vector(documents=split_documents,embeddings=embeddings)
-                logging.info("Loaded the documents and saved the vector store successfully")
+            docs=DocumentLoader.doc_loader()
+            split_documents=Splitter.split_document(docs)
+            vectorstore=VectorLoader.save_vector(documents=split_documents,embeddings=embeddings)
             
             return vectorstore
 
         except Exception as e:
             raise CustomException(e, sys) from e
+    @classmethod  
+    def get_vectordb_instance(cls):
+            try:
+                embeddings=EmbeddingLoader.get_embedding_obj()
+                vectorstore=VectorLoader.load_vector(embeddings)
+                return vectorstore
 
-    
+            except Exception as e:
+                raise CustomException(e, sys) from e
+
     @classmethod  
     def Rag_Chain_invoke(cls,question,vectorstore):
         try:
