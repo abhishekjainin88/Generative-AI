@@ -19,7 +19,7 @@ class CustomLogger:
 
         formatter = logging.Formatter("[ %(asctime)s ] %(name)s - %(levelname)s - %(message)s")
 
-        file_handler = logging.FileHandler(LOG_FILE_PATH)
+        file_handler = logging.FileHandler(LOG_FILE_PATH,encoding='utf-8')
         file_handler.setFormatter(formatter)
 
         self.logger.addHandler(file_handler)

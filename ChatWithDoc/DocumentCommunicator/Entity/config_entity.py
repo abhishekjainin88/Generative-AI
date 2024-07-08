@@ -24,6 +24,15 @@ class SplitterConfig:
     chunk_overlap:int = CHUNK_OVERLAP
 
 @dataclass
+class PineconeConfig:
+    api_key:str=PINECONE_API_KEY
+    cloud:str=PINECONE_CLOUD
+    region:str=PINECONE_REGION
+    metric:str=METRIC
+    index_dimension:int=INDEX_DIMENSION
+    namespace:str=NAMESPACE
+
+@dataclass
 class MongoDBConfig:
     cluster:str = CLUSTER
     region:str = REGION
@@ -34,6 +43,8 @@ class MongoDBConfig:
 @dataclass
 class VectorDBConfig:
     vectordb:str = VECTOR_DB
+    local_index_path:str = LOCAL_INDEX_PATH
+    index_name:str=INDEX_NAME
 
 @dataclass
 class LLMConfig:

@@ -26,12 +26,17 @@ class Service(OutputConfig):
         return "\n\n".join(doc.page_content for doc in docs)
     
     @classmethod  
-    def doc_loader_wrapper(cls):
+    def doc_loader_wrapper(cls,load_Document=True):
         try:
-            docs=DocumentLoader.doc_loader()
-            split_documents=Splitter.split_document(docs)
             embeddings=EmbeddingLoader.get_embedding_obj()
-            vectorstore=VectorLoader.save_vector(documents=split_documents,embeddings=embeddings)            
+            if  not load_Document:
+                vectorstore=VectorLoader.load_vector(embeddings)
+            else:
+                docs=DocumentLoader.doc_loader()
+                split_documents=Splitter.split_document(docs)
+                vectorstore=VectorLoader.save_vector(documents=split_documents,embeddings=embeddings)
+                logging.info("Loaded the documents and saved the vector store successfully")
+            
             return vectorstore
 
         except Exception as e:
@@ -39,10 +44,9 @@ class Service(OutputConfig):
 
     
     @classmethod  
-    def Rag_Chain_invoke(cls,question):
+    def Rag_Chain_invoke(cls,question,vectorstore):
         try:
             logging.info("Entered the Rag_Chain_invoke method of RAGChain class")
-            vectorstore=cls.doc_loader_wrapper()
             retriever=Retriever.get_retriever_obj(vectorstore)
             llm_model=LLMLoader.get_llm_model()
             prompt=ChatPromptTemplate.from_template(prompt_template)

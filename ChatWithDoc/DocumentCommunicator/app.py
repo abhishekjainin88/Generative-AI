@@ -1,16 +1,8 @@
 from Services.chain import Service
-from Components.vectordb import mongo_vector_db
-from Entity.config_entity import MongoDBConfig
 
-
-question="hi , What is LLM?"
-answer=Service.Rag_Chain_invoke(question)
-
-#MongoDB Connection Testing
-#mongodb_config = MongoDBConfig()
-#vectordtore = mongo_vector_db.MongoDBVectorStore(mongodb_config)
-#mongodb_client = vectordtore.create_database()
-
+question="What is attention in LLM"
+vector_store=Service.doc_loader_wrapper(load_Document=False) #Need to call everytime in case of FAISS vector store
+answer=Service.Rag_Chain_invoke(question,vector_store)
 
 print(answer)
 

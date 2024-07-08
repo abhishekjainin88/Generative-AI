@@ -29,8 +29,21 @@ CHUNK_SIZE = 1000
 CHUNK_OVERLAP  = 200
 
 #VectorDB
-VECTOR_DB = "MongoDB"
-#VECTOR_DB = "FAISS"
+#VECTOR_DB = "MongoDB"
+VECTOR_DB = "FAISS"
+#VECTOR_DB = "PINECONE"
+INDEX_NAME=os.getenv("INDEX_NAME")
+
+#Local index path
+LOCAL_INDEX_PATH ="Components\\vectordb\index.faiss"
+#Pinecone Constants
+PINECONE_API_KEY = os.getenv("PINECONE_API_KEY")
+PINECONE_CLOUD=os.getenv("PINECONE_CLOUD")
+PINECONE_REGION=os.getenv("PINECONE_REGION")
+METRIC="cosine"
+INDEX_DIMENSION=1536
+NAMESPACE='EGL'
+
 
 #LLM Constants
 LLM_NAME = "OpenAI"

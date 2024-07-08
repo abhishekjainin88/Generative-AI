@@ -4,3 +4,10 @@ venv
 logs
 # Compiled python modules
 __pycache__/
+
+# pytype static type analyzer
+.pytype/
+
+
+#Local Vector DB index files
+Components\vectordb\index.faiss
