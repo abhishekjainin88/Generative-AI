@@ -15,6 +15,7 @@ from Exception import CustomException
 from Entity.config_entity import OutputConfig
 import sys
 from Logger import CustomLogger
+from Components.evaluation import Evaluation
 
 logging = CustomLogger("chain_logger")
 
@@ -75,6 +76,27 @@ class Service(OutputConfig):
 
         except Exception as e:
             raise CustomException(e, sys) from e
+        
+    @classmethod  
+    def evaluate_rag(cls,vector_store, question_file = "Data\Evaluation\Q&A.xlsx"):
+            try:
+                answer_from_rag = []
+                context_from_rag = []
+
+                questions, ground_truth = Evaluation.load_excel(question_file)
+
+                print(questions)
+                print(ground_truth)
+                
+                for question in questions:
+                     answer_from_rag.append(cls.Rag_Chain_invoke(question,vector_store))
+                     context_from_rag.append([cls.doc_loader_wrapper().get_relevant_documents(question)])
+                
+                data_to_evaluate = {"question": questions, "answer": answer_from_rag, "contexts": context_from_rag,"ground_truths": ground_truth}
+                Evaluation.evaluate_rag_system(data_to_evaluate)
+
+            except Exception as e:
+                raise CustomException(e, sys) from e
 
 
 

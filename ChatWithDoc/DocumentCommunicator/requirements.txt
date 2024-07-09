@@ -23,3 +23,6 @@ python-dotenv
 pinecone-client
 langchain_pinecone
 flask
+openpyxl
+Dataset
+ragas
