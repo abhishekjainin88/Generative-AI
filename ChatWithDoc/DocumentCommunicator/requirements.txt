@@ -22,3 +22,7 @@ cryptography>=3.1
 python-dotenv
 pinecone-client
 langchain_pinecone
+flask
+openpyxl
+Dataset
+ragas
