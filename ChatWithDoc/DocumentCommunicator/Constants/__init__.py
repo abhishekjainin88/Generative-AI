@@ -20,6 +20,7 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 #Embedding Constants
 EMBEDDINGS = "OpenAIEmbeddings"
+EMBEDDING_MODEL= "text-embedding-3-small"  #"text-embedding-3-large" #'text-embedding-ada-002'
 
 #Text Splitter
 TEXT_SPLITTER = "RecursiveCharacterTextSplitter"
@@ -47,7 +48,7 @@ NAMESPACE='EGL'
 
 #LLM Constants
 LLM_NAME = "OpenAI"
-MODEL_NAME= "gpt-3.5-turbo"
+MODEL_NAME= "gpt-3.5-turbo" #"gpt-4-turbo" #"gpt-4o"
 
 #Output parser Config
 PARSER_NAME="StrOutputParser"

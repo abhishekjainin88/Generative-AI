@@ -13,8 +13,7 @@ class EmbeddingLoader(APILoaderConfig):
         try:
             logging.info("Entered the get_embedding_object method of EmbeddingLoader class")
             if cls.embedding_config.embedding == "OpenAIEmbeddings":                
-                open_ai_api_key = cls.api_loader_config.OPENAI_API_KEY
-                embeddings = OpenAIEmbeddings(api_key=open_ai_api_key)                
+                embeddings = OpenAIEmbeddings(api_key=cls.api_loader_config.OPENAI_API_KEY,model=cls.embedding_config.model)                
                 logging.info("Successfully return embedding object")                
                 return embeddings
         except Exception as e:

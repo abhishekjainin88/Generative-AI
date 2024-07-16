@@ -16,6 +16,7 @@ class APILoaderConfig:
 @dataclass
 class EmbeddingConfig:
     embedding:str = EMBEDDINGS
+    model:str=EMBEDDING_MODEL
 
 @dataclass
 class SplitterConfig:
